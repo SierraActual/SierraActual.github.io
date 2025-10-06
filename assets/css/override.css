@@ -1,0 +1,57 @@
+/* layer order */
+#bg{z-index:0;} #overlay{z-index:1;position:fixed;} #main{z-index:2;position:fixed;}
+
+/* compact readable header “card” */
+#header{
+  position:relative; z-index:3;
+  display:inline-block; max-width:35%;
+  padding:1rem 1.5rem; border-radius:28px;
+  background:rgba(0,0,0,.45); box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+#header h1{ text-shadow:0 4px 12px rgba(0,0,0,.4), 0 1px 1px rgba(0,0,0,.75); }
+#header p { text-shadow:0 2px 6px  rgba(0,0,0,.35); }
+
+/* Mobile-first: big on phones */
+#header{
+  display: inline-block;
+  width: auto !important;
+  max-width: 90%;
+  padding: 1rem 1.25rem;   /* keep your padding */
+}
+
+/* Tablet/Desktop: cap at 35% of viewport/container */
+@media (min-width: 1024px){
+  #header{ max-width: 35%; }          /* or use 35vw if you prefer viewport-based */
+}
+
+/* Keep centered */
+#main{ text-align: center; }
+
+/* Mobile: show more of the left side of the image */
+@media (max-width: 736px){
+  #bg{
+    /* pick ONE of these styles */
+    background-position: 94% 10%;       /* shift focal point left (tweak 10–30%) */
+    /* background-position: left 120px center;  // pixel nudge instead */
+    /* background-position: 15% 40%;           // also adjust vertical if needed */
+
+    /* These zoom the image */
+    transform: scale(1.00);         /* 1.05–1.25 = subtle→strong zoom */
+    /*transform-origin: 50% 30%;      /* keep your current focal point */
+    will-change: transform;
+  }
+}
+
+/* MOVE THE BOX DOWN ON MOBILE */
+/* Desktop/base: neutralize the theme's -1em nudge */
+#header { position: relative; top: 0 !important; }
+
+/* Mobile: push the card down */
+@media (max-width: 736px){
+  #header{
+    top: 10vh !important;   /* try 6–20vh to taste */
+    /* or use margin if you prefer:
+       margin-top: 12vh !important;
+    */
+  }
+}
