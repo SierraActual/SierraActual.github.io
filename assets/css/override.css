@@ -58,18 +58,3 @@
         */
     }
     }
-
-/* Enable pull-to-refresh on mobile */
-@media (max-width: 736px){
-  html, body {
-    height: auto;
-    overflow-y: auto !important;       /* was hidden */
-    overscroll-behavior-y: auto !important; /* allow refresh/bounce */
-    -webkit-overflow-scrolling: touch; /* iOS momentum */
-  }
-
-  /* Let the content be scrollable (keep bg fixed) */
-  #main, #overlay, #wrapper { position: static !important; min-height: 100dvh; }
-  #overlay { pointer-events: none; }   /* don't intercept touches */
-  #bg { position: fixed; inset: 0; }   /* keep your hero background pinned */
-}
