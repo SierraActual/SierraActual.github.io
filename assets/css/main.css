@@ -487,9 +487,9 @@ input, select, textarea {
 	}
 
 		#header h1 {
-			font-size: 4.35em;
-			font-weight: 900;
-			letter-spacing: -0.035em;
+			font-size: 3.75em;
+			font-weight: 600;
+			letter-spacing: -0.015em;
 			line-height: 1em;
 		}
 

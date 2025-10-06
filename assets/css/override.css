@@ -27,31 +27,34 @@
 /* Keep centered */
 #main{ text-align: center; }
 
-/* Mobile: show more of the left side of the image */
+/* Mobile: move image around*/
 @media (max-width: 736px){
   #bg{
-    /* pick ONE of these styles */
-    background-position: 94% 10%;       /* shift focal point left (tweak 10–30%) */
-    /* background-position: left 120px center;  // pixel nudge instead */
-    /* background-position: 15% 40%;           // also adjust vertical if needed */
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: 50% 25% !important;   /* ↓ try 15–40% */
+    background-position-x: 100% !important;     /* belts & suspenders */
+    background-position-y: 20% !important;
+  }
+}
 
-    /* These zoom the image */
-    transform: scale(1.00);         /* 1.05–1.25 = subtle→strong zoom */
-    /*transform-origin: 50% 30%;      /* keep your current focal point */
-    will-change: transform;
+@media (max-width: 736px){
+  #bg{
+    transform: translateY(-15vh) translateX(-5vh) scale(1.5);  /* nudge up + zoom */
+    transform-origin: 50% 25%;
   }
 }
 
 /* MOVE THE BOX DOWN ON MOBILE */
-/* Desktop/base: neutralize the theme's -1em nudge */
-#header { position: relative; top: 0 !important; }
+    /* Desktop/base: neutralize the theme's -1em nudge */
+    #header { position: relative; top: 0 !important; }
 
-/* Mobile: push the card down */
-@media (max-width: 736px){
-  #header{
-    top: 10vh !important;   /* try 6–20vh to taste */
-    /* or use margin if you prefer:
-       margin-top: 12vh !important;
-    */
-  }
-}
+    /* Mobile: push the card down */
+    @media (max-width: 736px){
+    #header{
+        top: 14vh !important;   /* try 6–20vh to taste */
+        /* or use margin if you prefer:
+        margin-top: 12vh !important;
+        */
+    }
+    }
