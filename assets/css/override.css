@@ -58,3 +58,76 @@
         */
     }
     }
+
+
+/*ADDING REPORTS BUTTON*/
+/* CTA block under the icon row */
+#header .reports-cta { margin-top: 1rem; }
+
+#header .reports-cta h2{
+  font-size: 1.60em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 .5rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+
+/* Pill button matching the theme */
+#header .btn{
+  display: inline-block;
+  padding: .65rem 1.1rem;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 9999px;
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  text-decoration: none;
+  transition: transform .15s ease, background-color .2s, border-color .2s;
+}
+#header .btn:hover  { background: rgba(255,255,255,.18); border-color: #fff; transform: translateY(-1px); }
+#header .btn:active { transform: translateY(0); }
+
+/* Mobile sizing */
+@media (max-width: 736px){
+  #header .reports-cta h2 { font-size: 1.1em; }
+  #header .btn { padding: .6rem 1rem; }
+}
+
+/*New bigger button*/
+#header .reports-cta .icon.big:before{
+  font-size: 1.8em;     /* icon glyph size */
+  width: 2.2em;         /* circle size */
+  height: 2.2em;
+  line-height: 2.2em;
+  border-width: 1px;    /* thicker ring (optional) */
+}
+#header .reports-cta .icon.big{ margin-top:.4rem; } /* spacing (optional) */
+
+/* Remove dotted line under resume icon */
+#header .reports-cta a.icon { border-bottom: 0 !important; }
+
+#header .reports-cta a.icon:before{
+  border: 1px solid #fff;     /* ring */
+  border-radius: 100%;
+  display: inline-block;
+  width: 3.0em;               /* circle size */
+  height: 3.0em;
+  line-height: 3.0em;
+}
+#header .reports-cta a.icon:hover:before{
+  background-color: rgba(255,255,255,.175);
+  color: #fff;
+}
+
+#header .reports-cta { text-align: center; }
+#header .reports-cta a.icon { display: inline-block; }  /* ensures it can be centered */
+
+/* Smooth hover grow like the other icons */
+#header .reports-cta a.icon:before{
+  transition: transform .2s ease;      /* animate the grow */
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+#header .reports-cta a.icon:hover:before{
+  transform: scale(1.08);              /* match the other icons’ “pop” */
+}
