@@ -160,14 +160,14 @@
 }
 
 #header .reports-cta h2 a.link-card:hover,
-#header .reports-cta h2 a.link-card:focus{
+#header .reports-cta h2 a.link-card:focus-visible{
   background: rgba(255,255,255,.18);
   border-color:#fff;
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(0,0,0,.22);
 }
 #header .reports-cta h2 a.link-card:hover::after,
-#header .reports-cta h2 a.link-card:focus::after{
+#header .reports-cta h2 a.link-card:focus-visible::after{
   transform: scaleX(1);
 }
 
@@ -187,4 +187,10 @@
   #header .reports-cta h2 { font-size: 0.95em; }          /* try 0.9–0.95 */
   /* optional: tighten the chip a touch on desktop */
   #header .reports-cta h2 a.link-card { padding: .3rem .55rem; }
+}
+
+@media (hover: none){
+  /* avoid sticky hover on touch */
+  #header .reports-cta h2 a.link-card:hover { transform: none; box-shadow: none; }
+  #header .reports-cta h2 a.link-card:hover::after { transform: scaleX(0); }
 }
