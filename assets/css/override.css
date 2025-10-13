@@ -131,3 +131,60 @@
 #header .reports-cta a.icon:hover:before{
   transform: scale(1.08);              /* match the other icons’ “pop” */
 }
+
+/* TEXT LINKS BELOW BUTTONS */
+/* style the h2 links like subtle buttons */
+#header .reports-cta h2 { margin: .5rem 0; }
+#header .reports-cta h2 a.link-card{
+  display:inline-block;
+  padding:.25rem .4rem;
+  border-radius:10px;
+  background: rgba(255,255,255,.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.75);
+  text-decoration:none;
+  position:relative;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, border-color .2s ease;
+}
+
+/* underline reveal + lift on hover/focus (no layout shift) */
+#header .reports-cta h2 a.link-card::after{
+  content:"";
+  position:absolute; left:12px; right:12px; bottom:.4rem;
+  height:2px; border-radius:2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .2s ease;
+  opacity:.75;
+}
+
+#header .reports-cta h2 a.link-card:hover,
+#header .reports-cta h2 a.link-card:focus{
+  background: rgba(255,255,255,.18);
+  border-color:#fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.22);
+}
+#header .reports-cta h2 a.link-card:hover::after,
+#header .reports-cta h2 a.link-card:focus::after{
+  transform: scaleX(1);
+}
+
+/* keyboard focus ring for accessibility */
+#header .reports-cta h2 a.link-card:focus-visible{
+  outline:2px solid #fff; outline-offset:2px;
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #header .reports-cta h2 a.link-card{ transition:none; }
+  #header .reports-cta h2 a.link-card::after{ transition:none; }
+}
+
+/* Desktop: make the Resume/Reports text a bit smaller */
+@media (min-width: 1024px){
+  #header .reports-cta h2 { font-size: 0.95em; }          /* try 0.9–0.95 */
+  /* optional: tighten the chip a touch on desktop */
+  #header .reports-cta h2 a.link-card { padding: .3rem .55rem; }
+}
