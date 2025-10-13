@@ -194,3 +194,20 @@
   #header .reports-cta h2 a.link-card:hover { transform: none; box-shadow: none; }
   #header .reports-cta h2 a.link-card:hover::after { transform: scaleX(0); }
 }
+
+/* Make the two link-chips fade/slide in like the nav icons */
+#header .reports-cta h2{
+  opacity: 0;
+  transform: translate3d(0,1em,0);
+  backface-visibility: hidden;
+  animation: nav-icons 0.5s ease-in-out forwards; /* uses keyframes from main.css */
+}
+
+/* Stagger them a bit (tweak timing to taste) */
+#header .reports-cta h2:nth-child(1){ animation-delay: 3.5s; }
+#header .reports-cta h2:nth-child(2){ animation-delay: 3.7s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #header .reports-cta h2{ animation: none; opacity: 1; transform: none; }
+}
